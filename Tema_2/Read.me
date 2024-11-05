@@ -2,13 +2,27 @@
                                                         -Type Racer Game-
 
 
-2.1 Componente
+2.0 Componente
   -Arduino UNO (ATmega328P microcontroller)
   -1x LED RGB (pentru a semnaliza dacă cuvântul corect e scris greșit sau nu)
   -2x Butoane (pentru start/stop rundă și pentru selectarea dificultății)
   -5x Rezistoare (3x 220/330 ohm, 2x 1000 ohm)
   -Breadbord
   -Fire de legătură
+2.1 Detalii tehnice
+   LED RGB - Indicator de stare:
+
+  În starea de repaus, LED-ul va avea culoarea albă.
+  La apăsarea butonului de start, LED-ul va clipi timp de 3 secunde, indicând o numărătoare inversă până la începerea rundei.
+  În timpul unei runde: LED-ul va fi verde dacă textul introdus este corect și va deveni roșu în caz de greșeală.
+  Butonul Start/Stop:
+
+  Modul de repaus: Dacă jocul este oprit, apăsarea butonului inițiază o nouă rundă după o numărătoare inversă de 3 secunde.
+  În timpul unei runde: Dacă runda este activă, apăsarea butonului o va opri imediat. Butonul de dificultate:
+
+  Butonul de dificultate controlează viteza cu care apar cuvintele și poate fi folosit doar în starea de repaus.
+  La fiecare apăsare, dificultatea se schimbă ciclind între: (Easy, Medium, Hard).
+  La schimbarea dificultății, se trimite un mesaj prin serial: “Easy/Medium/Hard mode on!”.
 2.2 Flow
   Jocul este în repaus. LED-ul RGB are culoarea albă.
   Se alege dificultatea jocului folosind butonul de dificultate, iar în terminal va apărea “Easy/Medium/Hard mode on!”.
@@ -19,3 +33,7 @@
   O greșeală face LED-ul să devină roșu. Pentru a corecta cuvântul, se va folosi tasta BackSpace.
   Dupa 30 de secunde, runda se termină, iar în terminal se va afișa scorul: numărul total de cuvinte scrise corect.
   Jocul se poate opri oricând cu butonul de start/stop.
+
+
+
+
